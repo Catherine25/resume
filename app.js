@@ -198,6 +198,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
         // document.getElementById(`desc-${index}`).innerHTML = html;
     });
+
+    const certContainer = document.getElementById("certificates-box");
+    certContainer.innerHTML = cvData.certificates.map(certificate => `
+        <div class="certificate">
+            <h4>${certificate.name}</h4>
+            <p>${certificate.date}</p>
+        </div>
+    `).join('');
+
+    const langContainer = document.getElementById("languages-box");
+    langContainer.innerHTML = cvData.languages.map(language => `
+        <div class="language">
+            <h4>${language.name}</h4>
+            <p>${language.level}</p>
+        </div>
+    `).join('');
 });
 
 function getDuration(job) {
