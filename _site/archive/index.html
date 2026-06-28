@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Resume</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="cv-container">
+        <header class="cv-header">
+            <img src="profile.jpg" alt="Profile Photo" class="profile-img">
+            <div class="header-text">
+                <h1 id="full-name"></h1>
+                <h2 id="job-title"></h2>
+                <div class="accent-line"></div>
+            </div>
+        </header>
+
+        <!-- MAIN TWO-COLUMN CONTENT -->
+        <div class="cv-content">
+            
+            <!-- LEFT COLUMN (Sidebar) -->
+            <aside class="left-col">
+                <section>
+                    <h3>Contact</h3>
+                    <div id="contact-box"></div>
+                </section>
+
+                <section>
+                    <h3>Skills</h3>
+                    <ul id="skills-box" class="skills-list"></ul>
+                </section>
+
+                <section>
+                    <h3>Publications</h3>
+                    <ul id="publications" class="skills-list"></ul>
+                </section>
+
+                <section>
+                    <h3>Certificates</h3>
+                    <ul id="skills-box" class="skills-list"></ul>
+                </section>
+
+                <section>
+                    <h3>Languages</h3>
+                    <ul id="skills-box" class="skills-list"></ul>
+                </section>
+
+            </aside>
+
+            <!-- RIGHT COLUMN (Main Body) -->
+            <main class="right-col">
+                <section>
+                    <h3>Summary</h3>
+                    <p id="summary-box"></p>
+                </section>
+
+                <section>
+                    <h3>Education</h3>
+                    <div id="education-box"></div>
+                </section>
+
+                <section>
+                    <h3>Experience</h3>
+                    <div id="experience-box"></div>
+                </section>
+                <script>
+                    fetch("./job-entries/intechsoft.html")
+                        .then(r => r.text())
+                        .then(html => {
+                            document.getElementById("experience-box").innerHTML = html;
+                        });
+                    </script>
+            </main>
+
+        </div>
+    </div>
+
+    <!-- Inject the data processing engine -->
+    <script src="app.js"></script>
+</body>
+</html>
