@@ -188,3 +188,18 @@ body {
     height: 3px;
     background-color: #346189;
 }
+
+.skill-chip {
+    border-color: var(--accent3-color);
+    border-radius: 0.5rem;
+    padding: 0.25rem;
+    width: fit-content;
+    border-style: ridge;
+}
+
+.skill-chip-container {
+    display: flex !important;
+    flex-flow: wrap;
+    gap: 0.25rem !important;
+    flex-direction: row !important;
+}

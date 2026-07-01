@@ -8,11 +8,11 @@ const cvData = {
         github: "https://github.com/Catherine25"
     },
     skills: [
-        { category: "Backend", items: "C#, .NET, ASP.NET, Entity Framework, MAUI, UWP, WPF, Xamarin" },
-        { category: "Frontend", items: "Angular 2+, TypeScript, HTML, SCSS" },
-        { category: "Data", items: "SQL (Oracle, MSSQL, KQL), Oracle SQL Developer" },
-        { category: "Tools", items: "Visual Studio, VS Code, Rider, Jira, DevOps, GitHub" },
-        { category: "AI Stack", items: "ChatGPT, GitHub Copilot, Claude Code" }
+        { category: "Backend", items: ["C#", ".NET", "ASP.NET", "Entity Framework", "MAUI", "UWP", "WPF", "Xamarin"] },
+        { category: "Frontend", items: ["Angular 2+", "TypeScript", "HTML", "SCSS"] },
+        { category: "Data", items: ["SQL (Oracle, MSSQL, KQL)", "Oracle SQL Developer"] },
+        { category: "Tools", items: ["Visual Studio", "VS Code", "Rider", "Jira", "DevOps", "GitHub"] },
+        { category: "AI Stack", items: ["ChatGPT", "GitHub Copilot", "Claude Code"] }
     ],
     education: [{
             university: "Kharkiv National University of Radio Electronics",
@@ -136,7 +136,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Inject Skills List Dynamically
     const skillsContainer = document.getElementById("skills-box");
     skillsContainer.innerHTML = cvData.skills.map(skill => `
-        <li><strong>${skill.category}:</strong> ${skill.items}</li>
+        <h4>${skill.category}:</h4> <div class="skill-chip-container">${skill.items.map(skill => toChip(skill)).join('')}</div>
     `).join('');
 
     // Inject Publication List Dynamically
@@ -209,7 +209,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const langContainer = document.getElementById("languages-box");
     langContainer.innerHTML = cvData.languages.map(language => `
-        <div class="language">
+        <div class="language" style="flex-direction: row; justify-content: space-between;">
             <h4>${language.name}</h4>
             <p>${language.level}</p>
         </div>
@@ -253,4 +253,8 @@ function printJobDuration(job) {
         : duration.months + " months";
 
     return years + months;
+}
+
+function toChip(skill) {
+    return `<span class="skill-chip">${skill}</span>`;
 }
