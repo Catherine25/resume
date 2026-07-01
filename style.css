@@ -217,3 +217,9 @@ body {
     gap: 0.25rem !important;
     flex-direction: row !important;
 }
+
+#skills-box {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
