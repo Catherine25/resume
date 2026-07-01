@@ -16,6 +16,9 @@ body {
     padding-right: 10%;
     padding-left: 10%;
 
+    @media print {
+        padding: 0;
+    }
 }
 
 /* Layout Split Grid */
@@ -40,7 +43,13 @@ body {
         padding: 2rem;
 
         h2 {
-            font-size: 3rem;
+            font-size: 2.75rem;
+        }
+
+        @media print {
+            h2 {
+                font-size: 2rem;
+            }
         }
         
         div {            
