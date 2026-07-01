@@ -28,6 +28,10 @@ body {
 .left-col {
     width: 33%;
     color: #E7E6EE;
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    background-color: var(--accent1-color);
 
     .left-col-name {
         display: flex;
@@ -51,6 +55,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    padding: 2rem;
     
     section {
         display: flex;
@@ -66,8 +71,17 @@ body {
             display: flex;
             flex-direction: column;
             gap: 1rem;
+
+        }
+        
+        div & #certificates-box {
+            flex-direction: column-reverse;
         }
 
+        div & #publications {
+            flex-direction: column-reverse;
+        }
+        
         ul {
             display: flex;
             flex-direction: column;
