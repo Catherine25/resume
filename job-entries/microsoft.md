@@ -1,7 +1,7 @@
 ## Software Engineer
 
 **Microsoft, Prague, Czech Republic**
-**June 2022 – October 2023 (1 year 4 months)**
+**June 2022 - October 2023 (1 year 4 months)**
 
 Maintained and modernized several legacy services, balancing feature development with production support and long-term improvements.
 
