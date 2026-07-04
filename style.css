@@ -247,6 +247,7 @@ body {
 a {
     color: rgba(255,255,255,.50);
     text-decoration: none;
+    overflow-wrap: break-word;
 }
 
 a:hover {
