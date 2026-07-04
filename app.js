@@ -3,9 +3,13 @@ const cvData = {
         fullName: "Catherine Solodukhina",
         title: "Software Engineer",
         phone: "+420 722 608 609",
+        phoneRef: "tel:+420 722 608 609",
         email: "catherinesolodoukhina@gmail.com",
-        linkedin: "https://www.linkedin.com/in/catherine-solodukhina",
-        github: "https://github.com/Catherine25"
+        emailRef: "mailto:catherinesolodoukhina@gmail.com",
+        linkedin: "linkedin.com/in/catherine-solodukhina",
+        linkedinRef: "https://www.linkedin.com/in/catherine-solodukhina",
+        github: "github.com/Catherine25",
+        githubRef: "https://github.com/Catherine25"
     },
     skills: [
         { category: "Backend", items: ["C#", ".NET", "ASP.NET", "Entity Framework", "MAUI", "UWP", "WPF", "Xamarin"] },
@@ -123,10 +127,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Inject Contact Section
     const contactHtml = `
-        <p><strong>Phone:</strong> ${cvData.contact.phone}</p>
-        <p><strong>Email:</strong> ${cvData.contact.email}</p>
-        <p><strong>LinkedIn:</strong> ${cvData.contact.linkedin}</p>
-        <p><strong>GitHub:</strong> ${cvData.contact.github}</p>
+        ${toContactsSection("./icons/circle-phone.svg", "Phone", cvData.contact.phone, cvData.contact.phoneRef)}
+        ${toContactsSection("./icons/envelope.svg", "Email", cvData.contact.email, cvData.contact.emailRef)}
+        ${toContactsSection("./icons/linkedin.svg", "LinkedIn", cvData.contact.linkedin, cvData.contact.linkedinRef)}
+        ${toContactsSection("./icons/github.svg", "GitHub", cvData.contact.github, cvData.contact.githubRef)}
     `;
     document.getElementById("contact-box").innerHTML = contactHtml;
 
@@ -257,4 +261,14 @@ function printJobDuration(job) {
 
 function toChip(skill) {
     return `<span class="skill-chip">${skill}</span>`;
+}
+
+function toContactsSection(iconPath, iconText, text, textRef) {
+    return `<div style="gap: 0.5rem">
+        <div class="icon-with-text">
+            <img src="${iconPath}" class="icon"></img>
+            <strong>${iconText}</strong>
+        </div>
+        <a href="${textRef}">${text}</a>
+    </div>`;
 }
