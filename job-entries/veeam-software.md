@@ -1,8 +1,3 @@
-## Developer I (promoted from Junior Developer)
-
-**Veeam Software, Prague, Czech Republic**
-**July 2024 - Present**
-
 Developed internal tools and automation that improve the workflow of engineers working on Veeam Backup & Replication (VBR).
 
 **Technologies:** C#, .NET, PowerShell, Azure DevOps, Git, WSL, Async Programming, CLI Development

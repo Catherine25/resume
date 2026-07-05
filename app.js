@@ -174,33 +174,31 @@ document.addEventListener("DOMContentLoaded", () => {
     expContainer.innerHTML = cvData.experience.map(job => `
         <div class="job-item">
             <div class="header">
-                <h4>${job.position}</h4>
-                <div class="dates">
-                    <span class="date">${printJobDate(job.startDate)}</span>
-                    <span class="date">${printJobDate(job.endDate)}</span>
-                </div>
-                <div class="duration">
-                    <span class="date">${printJobDuration(job)}</span>
-                </div>
-                <div class="location">
-                    <span class="company">${job.company}</span>
-                    <span class="company">${job.location}</span>
+                <h2>${job.position}</h2>
+                <div class="job-info">
+                    <div class="location">
+                        <div class="company"> ${toChip(job.company)}</div>
+                    </div>
+                    <div class="location">
+                        <div class="company">${toChip(job.location)}</div>
+                    </div>
+                    <div class="dates">
+                        <div class="date">${toChip(printJobDate(job.startDate) + " - " + printJobDate(job.endDate)) }</div>
+                    </div>
+                    <div class="duration">
+                        <div class="date">${toChip(printJobDuration(job))}</div>
+                    </div>
                 </div>
             </div>
-            <div class="description"></div>
+            <div class="job-description"></div>
         </div>
     `).join('');
 
     cvData.experience.forEach(async (job, index) => {
         const response = await fetch(`./job-entries/${job.descriptionFileName}`);
-        console.log(`./job-entries/${job.descriptionFileName}`);
-
         const html = await response.text();
-        console.log(html);
 
-        console.log(document.getElementById(`experience-box`).children[index].children[1].innerHTML = html);
-
-        // document.getElementById(`desc-${index}`).innerHTML = html;
+        document.getElementById(`experience-box`).children[index].children[1].innerHTML = html;
     });
 
     const certContainer = document.getElementById("certificates-box");
@@ -260,7 +258,7 @@ function printJobDuration(job) {
 }
 
 function toChip(skill) {
-    return `<span class="skill-chip">${skill}</span>`;
+    return `<div class="skill-chip">${skill}</div>`;
 }
 
 function toContactsSection(iconPath, iconText, text, textRef) {

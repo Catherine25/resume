@@ -1,8 +1,3 @@
-## Full-Stack .NET Software Engineer
-
-**InTechSoft, Kharkiv, Ukraine**
-**October 2019 - April 2022 (2 years 6 months)**
-
 Worked on several enterprise web applications focused on software deployment and device management, building features across the frontend, backend, and database.
 
 Technologies: ASP.NET, ASP.NET Core, Razor Pages, Angular, TypeScript, MS SQL Server, Oracle Database

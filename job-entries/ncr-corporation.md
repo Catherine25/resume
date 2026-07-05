@@ -1,8 +1,3 @@
-## Senior Software Engineer
-
-**NCR Corporation, Prague, Czech Republic**
-**January 2024 - April 2024 (3 months)**
-
 Joined a legacy project that was undergoing refactoring and adopting Shift Left practices.
 
 ### Highlights
