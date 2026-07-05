@@ -40,9 +40,10 @@ const cvData = {
             location: "Kharkiv, Ukraine",
             company: "InTechSoft",
             position: "Full-Stack .Net Software Engineer",
-            startDate: Temporal.PlainDate.from("2019-10-01"),
+            startDate: Temporal.PlainDate.from("2020-01-25"),
             endDate: Temporal.PlainDate.from("2022-04-30"),
-            descriptionFileName: "intechsoft.html"
+            descriptionFileName: "intechsoft.html",
+            promotedFrom: ".Net Developer (Junior/Trainee)"
         },
         {
             location: "Prague, Czech Republic",
@@ -63,10 +64,11 @@ const cvData = {
         {
             location: "Prague, Czech Republic",
             company: "Veeam Software",
-            position: "Developer I (promoted from Junior Developer)",
+            position: "Developer I",
             startDate: Temporal.PlainDate.from("2024-07-01"),
             endDate: null,
-            descriptionFileName: "veeam-software.html"
+            descriptionFileName: "veeam-software.html",
+            promotedFrom: "Junior Developer"
         }
     ],
     publications:
@@ -140,7 +142,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Inject Skills List Dynamically
     const skillsContainer = document.getElementById("skills-box");
     skillsContainer.innerHTML = cvData.skills.map(skill => `
-        <h4>${skill.category}:</h4> <div class="skill-chip-container">${skill.items.map(skill => toChip(skill)).join('')}</div>
+        <h4>${skill.category}:</h4> <div class="skill-chip-container">${skill.items.map(skill => toSkillChip(skill)).join('')}</div>
     `).join('');
 
     // Inject Publication List Dynamically
@@ -176,17 +178,18 @@ document.addEventListener("DOMContentLoaded", () => {
             <div class="header">
                 <h2>${job.position}</h2>
                 <div class="job-info">
+                    ${printPromotion(job.promotedFrom)}
                     <div class="location">
-                        <div class="company"> ${toChip(job.company)}</div>
+                        <div class="company">${toJobInfoChip(job.company)}</div>
                     </div>
                     <div class="location">
-                        <div class="company">${toChip(job.location)}</div>
+                        <div class="company">${toJobInfoChip(job.location)}</div>
                     </div>
                     <div class="dates">
-                        <div class="date">${toChip(printJobDate(job.startDate) + " - " + printJobDate(job.endDate)) }</div>
+                        <div class="date">${toJobInfoChip(printJobDate(job.startDate) + " - " + printJobDate(job.endDate)) }</div>
                     </div>
                     <div class="duration">
-                        <div class="date">${toChip(printJobDuration(job))}</div>
+                        <div class="date">${toJobInfoChip(printJobDuration(job))}</div>
                     </div>
                 </div>
             </div>
@@ -257,8 +260,12 @@ function printJobDuration(job) {
     return years + months;
 }
 
-function toChip(skill) {
+function toSkillChip(skill) {
     return `<div class="skill-chip">${skill}</div>`;
+}
+
+function toJobInfoChip(text) {
+    return `<div class="job-info-chip">${text}</div>`;
 }
 
 function toContactsSection(iconPath, iconText, text, textRef) {
@@ -269,4 +276,13 @@ function toContactsSection(iconPath, iconText, text, textRef) {
         </div>
         <a href="${textRef}">${text}</a>
     </div>`;
+}
+
+function printPromotion(text) {
+    if (text == null || text == undefined)
+        return "";
+    return `
+        <div class="promotion">
+            <div class="company">${toJobInfoChip("Promoted from " + text)}</div>
+        </div>`;
 }

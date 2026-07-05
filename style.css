@@ -213,6 +213,16 @@ a:hover {
     gap: 1rem;
 }
 
+.job-info-chip {
+    background: var(--accent5-color);
+    border-color: var(--accent3-color);
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    width: fit-content;
+    color: var(--accent3-color);
+    font-weight: bold;
+}
+
 .job-description {
     color: #2d2d2d;
     font-size: 1rem;
