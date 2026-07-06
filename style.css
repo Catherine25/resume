@@ -17,15 +17,15 @@ body {
     padding-left: 10%;
 
     @media print {
-        padding: 0;
+        padding-left: 0;
+        padding-right: 5%;
     }
 }
 
 /* Layout Split Grid */
 .cv-content {
     display: flex;
-    justify-content: space-between;
-    gap: 3rem;
+    gap: 5%;
 }
 
 .left-col {
@@ -104,7 +104,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    padding: 2rem;
+    padding-top: 2rem;
 
     h1 {
         font-size: 3rem;
@@ -133,7 +133,6 @@ body {
     .edu-item {
         div {
             display: flex;
-            /* justify-content: space-between; */
             gap: 1rem;
             div {
                 gap: 0.25rem;
@@ -211,6 +210,7 @@ a:hover {
 .job-info {
     display: flex;
     gap: 1rem;
+    flex-flow: wrap;
 }
 
 .job-info-chip {
