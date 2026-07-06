@@ -1,6 +1,6 @@
 Maintained and modernized several legacy services, balancing feature development with production support and long-term improvements.
 
-Technologies: C#, .NET Framework, .NET 6, Azure, Unit Testing, Integration Testing
+**Technologies:** C#, .NET Framework, .NET 6, Azure, Unit Testing, Integration Testing
 
 ### Highlights
 

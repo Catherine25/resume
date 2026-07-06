@@ -1,6 +1,6 @@
 Worked on several enterprise web applications focused on software deployment and device management, building features across the frontend, backend, and database.
 
-Technologies: ASP.NET, ASP.NET Core, Razor Pages, Angular, TypeScript, MS SQL Server, Oracle Database
+**Technologies:** ASP.NET, ASP.NET Core, Razor Pages, Angular, TypeScript, MS SQL Server, Oracle Database
 
 ### Highlights
 
