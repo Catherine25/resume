@@ -288,3 +288,7 @@ a:hover {
     padding: .1rem .3rem;
     border-radius: 3px;
 }
+
+.skill-group {
+    break-inside: avoid;
+}

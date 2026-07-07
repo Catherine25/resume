@@ -142,7 +142,10 @@ document.addEventListener("DOMContentLoaded", () => {
     // Inject Skills List Dynamically
     const skillsContainer = document.getElementById("skills-box");
     skillsContainer.innerHTML = cvData.skills.map(skill => `
-        <h4>${skill.category}:</h4> <div class="skill-chip-container">${skill.items.map(skill => toSkillChip(skill)).join('')}</div>
+        <div class="skill-group">
+            <h4>${skill.category}:</h4>
+            <div class="skill-chip-container">${skill.items.map(skill => toSkillChip(skill)).join('')}</div>
+        </div>
     `).join('');
 
     // Inject Publication List Dynamically
