@@ -162,14 +162,10 @@ document.addEventListener("DOMContentLoaded", () => {
     eduContainer.innerHTML = cvData.education.map(edu => `
         <div class="edu-item">
             <h3>${edu.university}</h3>
-            <div>
-                <div>
-                    <span class="date">${edu.startDate.year}</span>
-                    -
-                    <span class="date">${edu.endDate.year}</span>
-                </div>
-                <p>${edu.degree}</p>
-                <p>${edu.specialization}</p>
+            <div class="edu-chip-container">
+                ${toLightChip(edu.specialization)}
+                ${toLightChip(edu.degree)}
+                ${toLightChip(edu.startDate.year + " - " + edu.endDate.year)}
             </div>
         </div>
     `).join('');
@@ -183,16 +179,16 @@ document.addEventListener("DOMContentLoaded", () => {
                 <div class="job-info">
                     ${printPromotion(job.promotedFrom)}
                     <div class="location">
-                        <div class="company">${toJobInfoChip(job.company)}</div>
+                        <div class="company">${toLightChip(job.company)}</div>
                     </div>
                     <div class="location">
-                        <div class="company">${toJobInfoChip(job.location)}</div>
+                        <div class="company">${toLightChip(job.location)}</div>
                     </div>
                     <div class="dates">
-                        <div class="date">${toJobInfoChip(printJobDate(job.startDate) + " - " + printJobDate(job.endDate)) }</div>
+                        <div class="date">${toLightChip(printJobDate(job.startDate) + " - " + printJobDate(job.endDate)) }</div>
                     </div>
                     <div class="duration">
-                        <div class="date">${toJobInfoChip(printJobDuration(job))}</div>
+                        <div class="date">${toLightChip(printJobDuration(job))}</div>
                     </div>
                 </div>
             </div>
@@ -267,7 +263,7 @@ function toSkillChip(skill) {
     return `<div class="skill-chip">${skill}</div>`;
 }
 
-function toJobInfoChip(text) {
+function toLightChip(text) {
     return `<div class="job-info-chip">${text}</div>`;
 }
 
@@ -286,6 +282,6 @@ function printPromotion(text) {
         return "";
     return `
         <div class="promotion">
-            <div class="company">${toJobInfoChip("Promoted from " + text)}</div>
+            <div class="company">${toLightChip("Promoted from " + text)}</div>
         </div>`;
 }
