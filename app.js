@@ -178,18 +178,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 <h2>${job.position}</h2>
                 <div class="job-info">
                     ${printPromotion(job.promotedFrom)}
-                    <div class="location">
-                        <div class="company">${toLightChip(job.company)}</div>
-                    </div>
-                    <div class="location">
-                        <div class="company">${toLightChip(job.location)}</div>
-                    </div>
-                    <div class="dates">
-                        <div class="date">${toLightChip(printJobDate(job.startDate) + " - " + printJobDate(job.endDate)) }</div>
-                    </div>
-                    <div class="duration">
-                        <div class="date">${toLightChip(printJobDuration(job))}</div>
-                    </div>
+                    ${toLightChip(job.company)}
+                    ${toLightChip(printJobDate(job.startDate) + " - " + printJobDate(job.endDate)) }
+                    ${toLightChip(printJobDuration(job))}
+                    ${toLightChip(job.location)}
                 </div>
             </div>
             <div class="job-description"></div>
