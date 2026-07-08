@@ -4,8 +4,16 @@ Worked on several enterprise web applications focused on software deployment and
 
 ### Highlights
 
-- Maintained and extended an enterprise application used to deploy and install software across the organization, including scheduling and approval workflows.
-- Developed full-stack features for several device management applications, working on Angular, ASP.NET Core, and the underlying databases.
-- Built a new internal issue tracking application from the ground up, integrating Jira with the company's internal problem management system. Designed the initial database schema and implemented most of the user interface.
-- Helped to develop an administration portal for managing company devices, purchasing workflows, and user access rules.
-Delivered new features and production hotfixes in a fast-paced Agile environment.
+#### Stack: Angular2+ (TypeScript, HTML, SASS), ASP.NET Core, Oracle DB
+
+- Developed a lot of features of different sizes, including frontend, backend and database.
+- The features had to be developed in a cluster of device management projects.
+- Developed a project from scratch, setting up the initial database scaffold and developing majority of pages. The aim of the project was to track Jira issues and issues from an internal problem management system.
+- Delivered a high-priority website under a shortened delivery schedule, developing urgent features and hotfixing critical bugs.
+    - The main features of the project were: devices purchasing and management for users, setting up and adjusting user flows from the administration page. The system also included an administrator-customizable engine to manage access to the devices.
+
+#### Stack: ASP.NET, Razor Pages, MS SQL DB
+
+- Maintained a webservice as a 3-rd level support, with several features to implement.
+
+    - The main functionalities of the website were: app management, approval and scheduled installation.
