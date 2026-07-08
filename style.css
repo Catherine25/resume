@@ -301,3 +301,7 @@ a:hover {
 .skill-group {
     break-inside: avoid;
 }
+
+.footer-link {
+    color: var(--accent3-color);
+}
