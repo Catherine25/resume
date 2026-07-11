@@ -133,6 +133,7 @@ document.addEventListener("DOMContentLoaded", () => {
         ${toContactsSection("./icons/envelope.svg", "Email", cvData.contact.email, cvData.contact.emailRef)}
         ${toContactsSection("./icons/linkedin.svg", "LinkedIn", cvData.contact.linkedin, cvData.contact.linkedinRef)}
         ${toContactsSection("./icons/github.svg", "GitHub", cvData.contact.github, cvData.contact.githubRef)}
+        ${toDownloadLink("./icons/download.svg", "Download PDF", "Click here to download", "resume.pdf")}
     `;
     document.getElementById("contact-box").innerHTML = contactHtml;
 
@@ -266,6 +267,16 @@ function toContactsSection(iconPath, iconText, text, textRef) {
             <strong>${iconText}</strong>
         </div>
         <a href="${textRef}">${text}</a>
+    </div>`;
+}
+
+function toDownloadLink(iconPath, iconText, text, fileRef) {
+    return `<div style="gap: 0.5rem">
+        <div class="icon-with-text">
+            <img src="${iconPath}" class="icon"></img>
+            <strong>${iconText}</strong>
+        </div>
+        <a href="${fileRef}" download="${fileRef}">${text}</a>
     </div>`;
 }
 
