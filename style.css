@@ -305,3 +305,22 @@ a:hover {
 .footer-link {
     color: var(--accent3-color);
 }
+
+.web-only {
+  display: flex; /* or inline-block / flex, depending on your layout elements */
+}
+
+.pdf-only {
+  display: none !important;
+}
+
+/* When printing or compiling the PDF, invert the visibility */
+@media print {
+  .web-only {
+    display: none !important;
+  }
+  
+  .pdf-only {
+    display: flex !important; /* Forces it to appear in the PDF layout */
+  }
+}

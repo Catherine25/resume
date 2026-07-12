@@ -134,6 +134,7 @@ document.addEventListener("DOMContentLoaded", () => {
         ${toContactsSection("./icons/linkedin.svg", "LinkedIn", cvData.contact.linkedin, cvData.contact.linkedinRef)}
         ${toContactsSection("./icons/github.svg", "GitHub", cvData.contact.github, cvData.contact.githubRef)}
         ${toDownloadLink("./icons/download.svg", "Download PDF", "Click here to download", "resume.pdf")}
+        ${toWebsiteLink("./icons/globe.svg", "Web Version", "Open CV Web Version", "https://catherine25.github.io/resume")}
     `;
     document.getElementById("contact-box").innerHTML = contactHtml;
 
@@ -271,12 +272,22 @@ function toContactsSection(iconPath, iconText, text, textRef) {
 }
 
 function toDownloadLink(iconPath, iconText, text, fileRef) {
-    return `<div style="gap: 0.5rem">
+    return `<div class="web-only" style="gap: 0.5rem">
         <div class="icon-with-text">
             <img src="${iconPath}" class="icon"></img>
             <strong>${iconText}</strong>
         </div>
         <a href="${fileRef}" download="${fileRef}">${text}</a>
+    </div>`;
+}
+
+function toWebsiteLink(iconPath, iconText, text, textRef) {
+    return `<div class="pdf-only" style="gap: 0.5rem">
+        <div class="icon-with-text">
+            <img src="${iconPath}" class="icon"></img>
+            <strong>${iconText}</strong>
+        </div>
+        <a href="${textRef}">${text}</a>
     </div>`;
 }
 
