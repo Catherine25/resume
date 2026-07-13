@@ -324,3 +324,10 @@ a:hover {
     display: flex !important; /* Forces it to appear in the PDF layout */
   }
 }
+
+@media print {
+    h2, h3 {
+        padding-top: 0.5rem;    
+        padding-bottom: 0.5rem;    
+    }
+}
