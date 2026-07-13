@@ -15,5 +15,6 @@ npx playwright install
 ## Generate PDF
 
 ```
+npx http-server . -p 8080
 node generate-pdf.js
 ```

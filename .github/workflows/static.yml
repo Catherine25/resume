@@ -32,14 +32,19 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Install Playwright
-        run: npm install playwright
+      - name: Install Dependencies
+        run: |
+          npm install playwright
+          npm install -g http-server
 
       - name: Install Playwright Chromium Browser
         run: npx playwright install chromium --with-deps
 
-      - name: Run PDF Generator
-        run: node generate-pdf.js
+      - name: Run Server and Generate PDF
+        run: |
+          npx http-server . -p 8080 & 
+          sleep 2
+          node generate-pdf.js
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
